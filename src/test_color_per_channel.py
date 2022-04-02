@@ -16,8 +16,10 @@ import aL
 import mRL 
 
 
-"""## Dealing with color images channel by channel
-I.e. for a given color image, apply the defiltering scheme once for each channel. 
+"""
+Dealing with color images channel by channel
+I.e. for a given color image, apply the defiltering scheme 
+once for each channel. 
 """
 
 img = Image.open('../images/parrots.png')
@@ -78,7 +80,6 @@ fig2, axes2 = plt.subplots(1,3, figsize=(18,6))
 axes2[0].imshow(pcvc)
 axes2[1].imshow(mlm)
 axes2[2].imshow(mw)
-#plt.show()
 
 fig3, axes3 = plt.subplots(1,3, figsize=(18,6))
 axes3[0].imshow(xs)

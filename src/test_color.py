@@ -16,7 +16,9 @@ import aL
 import mRL 
 
 
-"""## Dealing with color images"""
+"""
+Dealing with color images
+"""
 
 img = Image.open('../images/parrots.png')
 xs = np.asarray(img)
@@ -47,7 +49,6 @@ y = F(xs)
 fig1, axes1 = plt.subplots(1,2, figsize=(18,6))
 axes1[0].imshow(xs)
 axes1[1].imshow(y)
-#plt.show()
 
 pcvc = pcVC.pcVC(F, y)
 mlm = mLM.mLM(F, y)
@@ -59,7 +60,6 @@ fig2, axes2 = plt.subplots(1,3, figsize=(18,6))
 axes2[0].imshow(pcvc)
 axes2[1].imshow(mlm)
 axes2[2].imshow(mw)
-#plt.show()
 
 fig3, axes3 = plt.subplots(1,3, figsize=(18,6))
 axes3[0].imshow(xs)

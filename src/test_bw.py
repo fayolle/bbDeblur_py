@@ -16,13 +16,19 @@ import aL
 import mRL 
 
 
-"""## Now some experiments with a grayscale image and noisy motion blur"""
+"""
+Experiments with a grayscale image and noisy motion blur
+"""
 
 img = Image.open('../images/barbara_face.png')
 xs = np.asarray(img)
 xs = skimage.img_as_float(xs)
 
-"""Definition of the filter (noisy motion blur). Gaussian noise is used, and kernel2 is used for the motion blur. """
+
+"""
+Definition of the filter (noisy motion blur). 
+Gaussian noise is used, and kernel2 is used for the motion blur. 
+"""
 
 noise_mean = 0
 noise_var = 0.00001
@@ -46,14 +52,19 @@ F = lambda x: skimage.util.random_noise(f(x), mode='gaussian', mean = noise_mean
 
 y = F(xs)
 
-"""The input and the blurred input image"""
+
+"""
+Show the input and the blurred input image
+"""
 
 fig1, axes1 = plt.subplots(1,2, figsize=(18,6))
 axes1[0].imshow(xs, cmap='gray', vmin=0.0, vmax=1.0)
 axes1[1].imshow(y, cmap='gray', vmin=0.0, vmax=1.0)
-#plt.show()
 
-"""Input, phase corrected VC and LM """
+
+"""
+Input, phase corrected VC and LM 
+"""
 
 pcvc = pcVC.pcVC(F, y)
 mlm = mLM.mLM(F, y)
@@ -65,7 +76,6 @@ fig2, axes2 = plt.subplots(1,3, figsize=(18,6))
 axes2[0].imshow(pcvc, cmap='gray', vmin=0.0, vmax=1.0)
 axes2[1].imshow(mlm, cmap='gray', vmin=0.0, vmax=1.0)
 axes2[2].imshow(mw, cmap='gray', vmin=0.0, vmax=1.0)
-#plt.show()
 
 fig3, axes3 = plt.subplots(1,3, figsize=(18,6))
 axes3[0].imshow(xs, cmap='gray', vmin=0.0, vmax=1.0)

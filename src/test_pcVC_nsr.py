@@ -12,7 +12,9 @@ import utils
 import pcVC
 
 
-"""## Compare pcVC and pcVC_nsr"""
+"""
+Compare pcVC and pcVC_nsr (There should be no visible difference)
+"""
 
 img = Image.open('../images/barbara_face.png')
 xs = np.asarray(img)
