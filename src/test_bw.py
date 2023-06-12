@@ -59,7 +59,9 @@ Show the input and the blurred input image
 
 fig1, axes1 = plt.subplots(1,2, figsize=(18,6))
 axes1[0].imshow(xs, cmap='gray', vmin=0.0, vmax=1.0)
+axes1[0].set_title('Original image')
 axes1[1].imshow(y, cmap='gray', vmin=0.0, vmax=1.0)
+axes1[1].set_title('Observed image')
 
 
 """
@@ -74,11 +76,17 @@ mrl = mRL.mRL(F, y)
 
 fig2, axes2 = plt.subplots(1,3, figsize=(18,6))
 axes2[0].imshow(pcvc, cmap='gray', vmin=0.0, vmax=1.0)
+axes2[0].set_title('pcVC')
 axes2[1].imshow(mlm, cmap='gray', vmin=0.0, vmax=1.0)
+axes2[1].set_title('mLM')
 axes2[2].imshow(mw, cmap='gray', vmin=0.0, vmax=1.0)
+axes2[2].set_title('mW')
 
 fig3, axes3 = plt.subplots(1,3, figsize=(18,6))
 axes3[0].imshow(xs, cmap='gray', vmin=0.0, vmax=1.0)
+axes3[0].set_title('Original image')
 axes3[1].imshow(al, cmap='gray', vmin=0.0, vmax=1.0)
+axes3[1].set_title('aL')
 axes3[2].imshow(mrl, cmap='gray', vmin=0.0, vmax=1.0)
+axes3[2].set_title('mRL')
 plt.show()
