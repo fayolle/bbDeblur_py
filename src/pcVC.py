@@ -5,8 +5,7 @@ import utils
 
 
 """## Phase corrected Van Cittert"""
-def pcVC(F, y):
-    maxiter = 100
+def pcVC(F, y, maxiter=100):
     TM = y.copy()
     
     for i in range(maxiter):
@@ -15,9 +14,8 @@ def pcVC(F, y):
     return TM
 
 
-def pcVC_nsr(F, y):
+def pcVC_nsr(F, y, maxiter=100):
     # Use the same formulation as in the paper 
-    maxiter = 100
     nsr = utils.estimate_nsr(y)
     a = 100.0*nsr 
     TM = y.copy()

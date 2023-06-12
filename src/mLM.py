@@ -5,10 +5,10 @@ import scipy.fft
 import utils 
 
 
-def mLM(F, y):
+def mLM(F, y, maxiter=100):
     nsr = utils.estimate_nsr(y)
     a = 100.0*nsr 
-    maxiter = 100
+
     lm = y.copy()
     
     for i in range(maxiter):

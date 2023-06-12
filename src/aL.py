@@ -4,8 +4,7 @@ import utils
 
 """## Approximate Landweber"""
 
-def aL(F, y):
-    maxiter = 500
+def aL(F, y, maxiter=500):
     L = y.copy()
     
     for i in range(maxiter):

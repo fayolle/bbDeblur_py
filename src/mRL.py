@@ -6,8 +6,7 @@ import utils
 
 """## Modified Richardson-Lucy"""
 
-def mRL(F, y):
-    maxiter = 500
+def mRL(F, y, maxiter=500):
     RL = y.copy()
 
     for i in range(maxiter):

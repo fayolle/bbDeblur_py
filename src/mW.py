@@ -7,12 +7,11 @@ import utils
 
 """## Modified Wiener"""
 
-def mW(F, y):
+def mW(F, y, maxiter=100):
     nsr = utils.estimate_nsr(y)
     #a = 100.0*nsr
     a = nsr
     
-    maxiter = 100
     W = y.copy()
     FW = F(W)
     H = scipy.fft.fftn(FW) / (scipy.fft.fftn(W) + 1e-16)
