@@ -11,10 +11,12 @@ def mW(F, y):
     nsr = utils.estimate_nsr(y)
     #a = 100.0*nsr
     a = nsr
+    
     maxiter = 100
-    W = y
+    W = y.copy()
     FW = F(W)
     H = scipy.fft.fftn(FW) / (scipy.fft.fftn(W) + 1e-16)
+
     for i in range(1, maxiter+1):
         H = H*(i-1)/i + scipy.fft.fftn(FW) / (scipy.fft.fftn(W) + 1e-16)/i
         Hconj = np.conjugate(H)

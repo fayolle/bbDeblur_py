@@ -7,7 +7,8 @@ import utils
 """## Phase corrected Van Cittert"""
 def pcVC(F, y):
     maxiter = 100
-    TM = y
+    TM = y.copy()
+    
     for i in range(maxiter):
         H = scipy.fft.fftn(F(TM)) / (scipy.fft.fftn(TM)+2.2204e-16)
         TM = TM + np.real(scipy.fft.ifftn((scipy.fft.fftn(y)/(H+2.2204e-16)-scipy.fft.fftn(TM)) * np.absolute(H)))
@@ -19,7 +20,8 @@ def pcVC_nsr(F, y):
     maxiter = 100
     nsr = utils.estimate_nsr(y)
     a = 100.0*nsr 
-    TM = y
+    TM = y.copy()
+    
     for i in range(maxiter):
         H = scipy.fft.fftn(F(TM)) / (scipy.fft.fftn(TM)+2.2204e-16)
         Hconj = np.conjugate(H)

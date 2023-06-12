@@ -6,7 +6,7 @@ import utils
 
 def aL(F, y):
     maxiter = 500
-    L = y
+    L = y.copy()
     
     for i in range(maxiter):
         hp = y - F(L)

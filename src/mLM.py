@@ -9,7 +9,8 @@ def mLM(F, y):
     nsr = utils.estimate_nsr(y)
     a = 100.0*nsr 
     maxiter = 100
-    lm = y 
+    lm = y.copy()
+    
     for i in range(maxiter):
         Flm = F(lm)
         H = scipy.fft.fftn(Flm) / (scipy.fft.fftn(lm) + 1e-16)

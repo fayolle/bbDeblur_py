@@ -8,7 +8,7 @@ import utils
 
 def mRL(F, y):
     maxiter = 500
-    RL = y
+    RL = y.copy()
 
     for i in range(maxiter):
         r1 = F(RL)/(np.abs(y)+1e-16)
